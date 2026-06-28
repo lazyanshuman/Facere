@@ -76,7 +76,23 @@ A premium desktop productivity application built with JavaFX for Windows. Track 
 
 ## Screenshots
 
-> Add screenshots of your app here
+### My Day — Light Mode
+![My Day Light](screenshots/my-day-light.png)
+
+### My Day — Dark Mode
+![My Day Dark](screenshots/my-day-dark.png)
+
+### Stats Dashboard
+![Stats](screenshots/stats.png)
+
+### Splash Greeting
+![Splash](screenshots/splash.png)
+
+### User Picker
+![User Picker](screenshots/user-picker.png)
+
+### Habits
+![Habits](screenshots/habits.png)
 
 ---
 
