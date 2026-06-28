@@ -192,7 +192,7 @@ src/main/java/com/habitflow/
 
 ```bash
 # Clone the repository
-git clone https://github.com/lazyanshuman/facere.git
+git clone https://github.com/lazyanshuman/Facere.git
 cd facere
 
 # Run the application
