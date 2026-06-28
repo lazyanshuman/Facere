@@ -208,6 +208,35 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 ---
 
+## Roadmap — v2.0
+
+Facere v2.0 is in planning. Here's what's coming:
+
+### Phase 19 — Security Hardening
+- SQLCipher AES-256 encrypted database (replacing plain SQLite)
+- Windows DPAPI key storage via JNA
+- PBKDF2 key derivation for PIN system
+- Persistent lockout across app restarts
+- OS-level file permissions via icacls
+
+### Visual & UX Overhaul
+- Redesigned task cards with richer layouts
+- Calendar heatmap view for habit streaks
+- Drag-and-drop task reordering
+- Custom accent colour per user
+- Improved responsive layout for smaller screens
+
+### New Features (Planned)
+- Task sharing between users
+- Export data to CSV / PDF
+- AI-powered daily productivity summaries
+- Cloud sync between devices
+- Auto-update system
+
+> Want to suggest a feature? [Open an issue](https://github.com/lazyanshuman/Facere/issues/new)!
+
+---
+
 ## Author
 
 **Anshuman Tiwari**
