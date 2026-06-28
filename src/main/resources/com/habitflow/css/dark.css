@@ -1,0 +1,287 @@
+/* =====================================================
+   HABITFLOW — Dark Theme
+   Overrides the root variables from main.css
+   ===================================================== */
+
+.root {
+    /* Brand colours — slightly lighter for dark */
+    -hf-accent:          #7C73FF;
+    -hf-accent-hover:    #6A61E8;
+    -hf-accent-light:    #2D2B4E;
+
+    /* Sidebar */
+    -hf-sidebar-bg:      #1E1E2E;
+    -hf-sidebar-width:   220px;
+    -hf-sidebar-hover:   #2A2A3E;
+    -hf-sidebar-active:  #313150;
+
+    /* Top bar */
+    -hf-topbar-bg:       #181825;
+    -hf-topbar-height:   56px;
+
+    /* Center pane */
+    -hf-center-bg:       #13131F;
+
+    /* Text colours */
+    -hf-text-primary:    #E8E8F0;
+    -hf-text-secondary:  #A0A0B8;
+    -hf-text-muted:      #6B6B88;
+
+    /* Status colours */
+    -hf-done-color:      #10B981;
+    -hf-delayed-color:   #F59E0B;
+    -hf-pending-color:   #7C73FF;
+    -hf-critical-color:  #EF4444;
+
+    /* Borders */
+    -hf-border:          #2E2E45;
+    -hf-shadow:          dropshadow(gaussian,
+                         rgba(0,0,0,0.3),
+                         8, 0, 0, 2);
+
+    /* Base */
+    -fx-font-family:     "Segoe UI";
+    -fx-font-size:       14px;
+    -fx-base:            #1E1E2E;
+    -fx-background:      #13131F;
+    -fx-control-inner-background: #1E1E2E;
+    -fx-text-fill:       #E8E8F0;
+}
+
+/* ── Main Layout ───────────────────────────────────── */
+.main-border-pane {
+    -fx-background-color: #13131F;
+}
+
+/* ── TOP BAR ───────────────────────────────────────── */
+.top-bar {
+    -fx-background-color: #181825;
+    -fx-border-color: transparent transparent
+                      #2E2E45 transparent;
+}
+
+.app-title-label {
+    -fx-text-fill: #7C73FF;
+}
+
+.search-field {
+    -fx-background-color:  #1E1E2E;
+    -fx-border-color:      #2E2E45;
+    -fx-text-fill:         #E8E8F0;
+    -fx-prompt-text-fill:  #6B6B88;
+}
+
+.search-field:focused {
+    -fx-border-color: #7C73FF;
+}
+
+.quick-add-field {
+    -fx-background-color:  #1E1E2E;
+    -fx-border-color:      #2E2E45;
+    -fx-text-fill:         #E8E8F0;
+    -fx-prompt-text-fill:  #6B6B88;
+}
+
+.quick-add-field:focused {
+    -fx-border-color: #7C73FF;
+}
+
+/* ── LEFT SIDEBAR ──────────────────────────────────── */
+.sidebar {
+    -fx-background-color: #1E1E2E;
+    -fx-border-color: transparent #2E2E45
+                      transparent transparent;
+}
+
+.sidebar-section-label {
+    -fx-text-fill: #6B6B88;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill:        #A0A0B8;
+}
+
+.nav-button:hover {
+    -fx-background-color: #2A2A3E;
+    -fx-text-fill:        #E8E8F0;
+}
+
+.nav-button-active {
+    -fx-background-color: #313150;
+    -fx-text-fill:        #7C73FF;
+}
+
+/* ── CENTER PANE ───────────────────────────────────── */
+.center-pane {
+    -fx-background-color: #13131F;
+}
+
+.section-title {
+    -fx-text-fill: #E8E8F0;
+}
+
+.section-subtitle {
+    -fx-text-fill: #6B6B88;
+}
+
+/* ── TASK CARDS ────────────────────────────────────── */
+.task-card {
+    -fx-background-color: #1E1E2E;
+    -fx-border-color:     #2E2E45;
+}
+
+.task-card:hover {
+    -fx-border-color: #7C73FF;
+}
+
+.task-title {
+    -fx-text-fill: #E8E8F0;
+}
+
+.task-title-delayed {
+    -fx-text-fill: #F59E0B;
+}
+
+/* ── HABIT CARDS ───────────────────────────────────── */
+.habit-card {
+    -fx-background-color: #1E1E2E;
+    -fx-border-color:     #2E2E45;
+}
+
+.habit-card:hover {
+    -fx-border-color: #7C73FF;
+}
+
+.habit-title {
+    -fx-text-fill: #E8E8F0;
+}
+
+.habit-subtitle {
+    -fx-text-fill: #A0A0B8;
+}
+
+/* ── DOS DONTS ─────────────────────────────────────── */
+.dodont-do-panel {
+    -fx-background-color: #0D2318;
+    -fx-border-color:     #1A4731;
+}
+
+.dodont-dont-panel {
+    -fx-background-color: #2D0F0F;
+    -fx-border-color:     #5C1A1A;
+}
+
+.dodont-item-card {
+    -fx-background-color: #1E1E2E;
+    -fx-border-color:     #2E2E45;
+}
+
+.dodont-item-title {
+    -fx-text-fill: #E8E8F0;
+}
+
+/* ── LIST VIEW ─────────────────────────────────────── */
+.task-list-view {
+    -fx-background-color: transparent;
+}
+
+.task-list-view .list-cell {
+    -fx-background-color: transparent;
+}
+
+.task-list-view .list-cell:selected {
+    -fx-background-color: #2A2A3E;
+}
+
+/* ── SCROLL BARS ───────────────────────────────────── */
+.scroll-bar {
+    -fx-background-color: #1E1E2E;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #2E2E45;
+    -fx-background-radius: 4px;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #7C73FF;
+}
+
+/* ── COMBO BOX ─────────────────────────────────────── */
+.combo-box {
+    -fx-background-color:  #1E1E2E;
+    -fx-border-color:      #2E2E45;
+    -fx-text-fill:         #E8E8F0;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: #1E1E2E;
+    -fx-text-fill:        #E8E8F0;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #1E1E2E;
+    -fx-border-color:     #2E2E45;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #2A2A3E;
+}
+
+/* ── DATE PICKER ───────────────────────────────────── */
+.date-picker {
+    -fx-background-color: #1E1E2E;
+    -fx-border-color:     #2E2E45;
+    -fx-text-fill:        #E8E8F0;
+}
+
+/* ── DIALOGS ───────────────────────────────────────── */
+.dialog-pane {
+    -fx-background-color: #1E1E2E;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #181825;
+}
+
+.dialog-pane .content {
+    -fx-background-color: #1E1E2E;
+}
+
+.dialog-pane .label {
+    -fx-text-fill: #E8E8F0;
+}
+
+/* ── TEXT FIELDS IN DARK ───────────────────────────── */
+.text-field, .text-area {
+    -fx-background-color:  #13131F;
+    -fx-border-color:      #2E2E45;
+    -fx-text-fill:         #E8E8F0;
+    -fx-prompt-text-fill:  #6B6B88;
+}
+
+.text-field:focused,
+.text-area:focused {
+    -fx-border-color: #7C73FF;
+}
+
+/* ── SEPARATORS ────────────────────────────────────── */
+.separator .line {
+    -fx-border-color: #2E2E45;
+}
+
+/* ── LABELS ────────────────────────────────────────── */
+.label {
+    -fx-text-fill: #E8E8F0;
+}
+
+/* ── BUTTONS ───────────────────────────────────────── */
+.button {
+    -fx-background-color: #2A2A3E;
+    -fx-text-fill:        #E8E8F0;
+}
+
+.button:hover {
+    -fx-background-color: #313150;
+}

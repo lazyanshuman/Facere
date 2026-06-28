@@ -1,0 +1,770 @@
+/* =====================================================
+   HABITFLOW — Main Stylesheet
+   Built on top of AtlantaFX PrimerLight base theme.
+   We override and extend it with our own variables.
+   ===================================================== */
+
+/* ── Root Variables — change these to restyle the
+   entire app in one place ─────────────────────────── */
+.root {
+    /* Brand colours */
+    -hf-accent:          #6C63FF;
+    -hf-accent-hover:    #5A52D5;
+    -hf-accent-light:    #EAE9FF;
+
+    /* Sidebar */
+    -hf-sidebar-bg:      #F8F7FF;
+    -hf-sidebar-width:   220px;
+    -hf-sidebar-hover:   #EEEEFF;
+    -hf-sidebar-active:  #E0DEFF;
+
+    /* Top bar */
+    -hf-topbar-bg:       #FFFFFF;
+    -hf-topbar-height:   56px;
+
+    /* Center pane */
+    -hf-center-bg:       #FAFAFA;
+
+    /* Text colours */
+    -hf-text-primary:    #1A1A2E;
+    -hf-text-secondary:  #6B7280;
+    -hf-text-muted:      #9CA3AF;
+
+    /* Status colours */
+    -hf-done-color:      #10B981;
+    -hf-delayed-color:   #F59E0B;
+    -hf-pending-color:   #6C63FF;
+    -hf-critical-color:  #EF4444;
+
+    /* Borders and shadows */
+    -hf-border:          #E5E7EB;
+    -hf-shadow:          dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+
+    /* Fonts */
+    -fx-font-family:     "Segoe UI";
+    -fx-font-size:       14px;
+}
+
+/* ── Main Layout ───────────────────────────────────── */
+.main-border-pane {
+    -fx-background-color: -hf-center-bg;
+}
+
+/* ── TOP BAR ───────────────────────────────────────── */
+.top-bar {
+    -fx-background-color: -hf-topbar-bg;
+    -fx-padding:          0 16px;
+    -fx-min-height:       -hf-topbar-height;
+    -fx-max-height:       -hf-topbar-height;
+    -fx-border-color:     transparent transparent -hf-border transparent;
+    -fx-border-width:     0 0 1px 0;
+    -fx-effect:           -hf-shadow;
+}
+
+.app-title-label {
+    -fx-font-size:        20px;
+    -fx-font-weight:      bold;
+    -fx-text-fill:        -hf-accent;
+}
+
+.search-field {
+    -fx-background-radius: 20px;
+    -fx-border-radius:     20px;
+    -fx-border-color:      -hf-border;
+    -fx-border-width:      1px;
+    -fx-padding:           6px 14px;
+    -fx-pref-width:        280px;
+    -fx-prompt-text-fill:  -hf-text-muted;
+}
+
+.search-field:focused {
+    -fx-border-color:      -hf-accent;
+}
+
+.quick-add-field {
+    -fx-background-radius: 8px;
+    -fx-border-radius:     8px;
+    -fx-border-color:      -hf-border;
+    -fx-border-width:      1px;
+    -fx-padding:           6px 14px;
+    -fx-pref-width:        240px;
+    -fx-prompt-text-fill:  -hf-text-muted;
+}
+
+.quick-add-field:focused {
+    -fx-border-color:      -hf-accent;
+}
+
+.add-button {
+    -fx-background-color:  -hf-accent;
+    -fx-text-fill:         white;
+    -fx-font-size:         20px;
+    -fx-font-weight:       bold;
+    -fx-background-radius: 50%;
+    -fx-min-width:         36px;
+    -fx-min-height:        36px;
+    -fx-max-width:         36px;
+    -fx-max-height:        36px;
+    -fx-cursor:            hand;
+}
+
+.add-button:hover {
+    -fx-background-color:  -hf-accent-hover;
+}
+
+.profile-button {
+    -fx-background-color:  -hf-accent-light;
+    -fx-text-fill:         -hf-accent;
+    -fx-font-weight:       bold;
+    -fx-background-radius: 50%;
+    -fx-min-width:         36px;
+    -fx-min-height:        36px;
+    -fx-max-width:         36px;
+    -fx-max-height:        36px;
+    -fx-cursor:            hand;
+}
+
+.profile-button:hover {
+    -fx-background-color:  -hf-accent;
+    -fx-text-fill:         white;
+}
+
+/* ── LEFT SIDEBAR ──────────────────────────────────── */
+.sidebar {
+    -fx-background-color:  -hf-sidebar-bg;
+    -fx-min-width:         -hf-sidebar-width;
+    -fx-max-width:         -hf-sidebar-width;
+    -fx-padding:           12px 8px;
+    -fx-border-color:      transparent -hf-border transparent transparent;
+    -fx-border-width:      0 1px 0 0;
+}
+
+.sidebar-section-label {
+    -fx-font-size:         10px;
+    -fx-font-weight:       bold;
+    -fx-text-fill:         -hf-text-muted;
+    -fx-padding:           12px 8px 4px 8px;
+}
+
+.nav-button {
+    -fx-background-color:  transparent;
+    -fx-text-fill:         -hf-text-secondary;
+    -fx-font-size:         13px;
+    -fx-alignment:         center-left;
+    -fx-padding:           8px 12px;
+    -fx-background-radius: 8px;
+    -fx-cursor:            hand;
+    -fx-pref-width:        200px;
+    -fx-max-width:         200px;
+    -fx-graphic-text-gap:  10px;
+}
+
+.nav-button:hover {
+    -fx-background-color:  -hf-sidebar-hover;
+    -fx-text-fill:         -hf-text-primary;
+}
+
+.nav-button-active {
+    -fx-background-color:  -hf-sidebar-active;
+    -fx-text-fill:         -hf-accent;
+    -fx-font-weight:       bold;
+}
+
+/* ── CENTER PANE ───────────────────────────────────── */
+.center-pane {
+    -fx-background-color:  -hf-center-bg;
+    -fx-padding:           24px;
+}
+
+.section-title {
+    -fx-font-size:         22px;
+    -fx-font-weight:       bold;
+    -fx-text-fill:         -hf-text-primary;
+}
+
+.section-subtitle {
+    -fx-font-size:         12px;
+    -fx-text-fill:         -hf-text-muted;
+}
+
+.task-list-view {
+    -fx-background-color:  transparent;
+    -fx-padding:           0;
+}
+
+.task-list-view .list-cell {
+    -fx-background-color:  transparent;
+    -fx-padding:           4px 0;
+}
+
+.empty-state-label {
+    -fx-font-size:         15px;
+    -fx-text-fill:         -hf-text-muted;
+    -fx-padding:           40px;
+}
+
+/* ── SEPARATOR ─────────────────────────────────────── */
+.sidebar-separator {
+    -fx-background-color:  -hf-border;
+    -fx-pref-height:       1px;
+    -fx-max-height:        1px;
+    -fx-padding:           0 8px;
+    -fx-margin:            4px 0;
+}
+
+/* ── TASK CARDS ────────────────────────────────────── */
+.task-card {
+    -fx-background-color:  white;
+    -fx-background-radius: 10px;
+    -fx-border-color:      #E5E7EB;
+    -fx-border-radius:     10px;
+    -fx-border-width:      1px;
+    -fx-padding:           12px 16px;
+    -fx-effect:            dropshadow(gaussian,
+                           rgba(0,0,0,0.04), 4, 0, 0, 1);
+}
+
+.task-card:hover {
+    -fx-border-color:      -hf-accent;
+    -fx-effect:            dropshadow(gaussian,
+                           rgba(108,99,255,0.12),
+                           8, 0, 0, 2);
+}
+
+.task-title {
+    -fx-font-size:   14px;
+    -fx-text-fill:   #1A1A2E;
+    -fx-font-weight: normal;
+}
+
+.task-title-done {
+    -fx-font-size:        14px;
+    -fx-text-fill:        #9CA3AF;
+    -fx-strikethrough:    true;
+}
+
+.task-title-delayed {
+    -fx-font-size:   14px;
+    -fx-text-fill:   #F59E0B;
+}
+
+/* Status dot colours */
+.status-dot-pending {
+    -fx-text-fill: #6C63FF;
+    -fx-font-size: 10px;
+}
+
+.status-dot-done {
+    -fx-text-fill: #10B981;
+    -fx-font-size: 10px;
+}
+
+.status-dot-delayed {
+    -fx-text-fill: #F59E0B;
+    -fx-font-size: 10px;
+}
+
+/* The 3 action buttons on each task card */
+.btn-done {
+    -fx-background-color:  transparent;
+    -fx-text-fill:         #10B981;
+    -fx-font-size:         13px;
+    -fx-cursor:            hand;
+    -fx-background-radius: 6px;
+    -fx-padding:           4px 8px;
+    -fx-border-color:      #10B981;
+    -fx-border-radius:     6px;
+    -fx-border-width:      1px;
+}
+
+.btn-done:hover {
+    -fx-background-color:  #10B981;
+    -fx-text-fill:         white;
+}
+
+.btn-delayed {
+    -fx-background-color:  transparent;
+    -fx-text-fill:         #F59E0B;
+    -fx-font-size:         13px;
+    -fx-cursor:            hand;
+    -fx-background-radius: 6px;
+    -fx-padding:           4px 8px;
+    -fx-border-color:      #F59E0B;
+    -fx-border-radius:     6px;
+    -fx-border-width:      1px;
+}
+
+.btn-delayed:hover {
+    -fx-background-color:  #F59E0B;
+    -fx-text-fill:         white;
+}
+
+.btn-delete {
+    -fx-background-color:  transparent;
+    -fx-text-fill:         #9CA3AF;
+    -fx-font-size:         13px;
+    -fx-cursor:            hand;
+    -fx-background-radius: 6px;
+    -fx-padding:           4px 8px;
+}
+
+.btn-delete:hover {
+    -fx-text-fill:         #EF4444;
+}
+
+/* Priority indicator strip on left of card */
+.priority-low {
+    -fx-background-color:  #10B981;
+    -fx-min-width:         4px;
+    -fx-max-width:         4px;
+    -fx-background-radius: 4px;
+}
+
+.priority-normal {
+    -fx-background-color:  #6C63FF;
+    -fx-min-width:         4px;
+    -fx-max-width:         4px;
+    -fx-background-radius: 4px;
+}
+
+.priority-high {
+    -fx-background-color:  #F59E0B;
+    -fx-min-width:         4px;
+    -fx-max-width:         4px;
+    -fx-background-radius: 4px;
+}
+
+.priority-critical {
+    -fx-background-color:  #EF4444;
+    -fx-min-width:         4px;
+    -fx-max-width:         4px;
+    -fx-background-radius: 4px;
+}
+
+/* ── CLEAR ALL BUTTON ──────────────────────────────── */
+.btn-clear-all {
+    -fx-background-color:  transparent;
+    -fx-text-fill:         #EF4444;
+    -fx-font-size:         13px;
+    -fx-font-weight:       bold;
+    -fx-cursor:            hand;
+    -fx-background-radius: 8px;
+    -fx-padding:           6px 16px;
+    -fx-border-color:      #EF4444;
+    -fx-border-radius:     8px;
+    -fx-border-width:      1px;
+}
+
+.btn-clear-all:hover {
+    -fx-background-color:  #EF4444;
+    -fx-text-fill:         white;
+}
+
+/* ── ADD HABIT BUTTON ──────────────────────────────── */
+.btn-add-habit {
+    -fx-background-color:  -hf-accent;
+    -fx-text-fill:         white;
+    -fx-font-size:         13px;
+    -fx-font-weight:       bold;
+    -fx-cursor:            hand;
+    -fx-background-radius: 8px;
+    -fx-padding:           6px 16px;
+}
+
+.btn-add-habit:hover {
+    -fx-background-color:  -hf-accent-hover;
+}
+
+/* ── HABIT CARDS ───────────────────────────────────── */
+.habit-card {
+    -fx-background-color:  white;
+    -fx-background-radius: 12px;
+    -fx-border-color:      #E5E7EB;
+    -fx-border-radius:     12px;
+    -fx-border-width:      1px;
+    -fx-padding:           14px 16px;
+    -fx-effect:            dropshadow(gaussian,
+                           rgba(0,0,0,0.04),
+                           4, 0, 0, 1);
+}
+
+.habit-card:hover {
+    -fx-border-color:      -hf-accent;
+    -fx-effect:            dropshadow(gaussian,
+                           rgba(108,99,255,0.12),
+                           8, 0, 0, 2);
+}
+
+.habit-title {
+    -fx-font-size:   15px;
+    -fx-font-weight: bold;
+    -fx-text-fill:   #1A1A2E;
+}
+
+.habit-subtitle {
+    -fx-font-size:  12px;
+    -fx-text-fill:  #6B7280;
+}
+
+.habit-streak {
+    -fx-font-size:   13px;
+    -fx-text-fill:   #F59E0B;
+    -fx-font-weight: bold;
+}
+
+.habit-type-build {
+    -fx-background-color:  #D1FAE5;
+    -fx-text-fill:         #065F46;
+    -fx-font-size:         11px;
+    -fx-font-weight:       bold;
+    -fx-background-radius: 4px;
+    -fx-padding:           2px 8px;
+}
+
+.habit-type-break {
+    -fx-background-color:  #FEE2E2;
+    -fx-text-fill:         #991B1B;
+    -fx-font-size:         11px;
+    -fx-font-weight:       bold;
+    -fx-background-radius: 4px;
+    -fx-padding:           2px 8px;
+}
+
+.btn-habit-done {
+    -fx-background-color:  transparent;
+    -fx-text-fill:         #10B981;
+    -fx-font-size:         13px;
+    -fx-cursor:            hand;
+    -fx-background-radius: 6px;
+    -fx-padding:           4px 12px;
+    -fx-border-color:      #10B981;
+    -fx-border-radius:     6px;
+    -fx-border-width:      1px;
+}
+
+.btn-habit-done:hover {
+    -fx-background-color:  #10B981;
+    -fx-text-fill:         white;
+}
+
+.btn-habit-done-active {
+    -fx-background-color:  #10B981;
+    -fx-text-fill:         white;
+    -fx-font-size:         13px;
+    -fx-cursor:            hand;
+    -fx-background-radius: 6px;
+    -fx-padding:           4px 12px;
+}
+
+.btn-habit-skip {
+    -fx-background-color:  transparent;
+    -fx-text-fill:         #EF4444;
+    -fx-font-size:         13px;
+    -fx-cursor:            hand;
+    -fx-background-radius: 6px;
+    -fx-padding:           4px 12px;
+    -fx-border-color:      #EF4444;
+    -fx-border-radius:     6px;
+    -fx-border-width:      1px;
+}
+
+.btn-habit-skip:hover {
+    -fx-background-color:  #EF4444;
+    -fx-text-fill:         white;
+}
+
+.btn-habit-skip-active {
+    -fx-background-color:  #EF4444;
+    -fx-text-fill:         white;
+    -fx-font-size:         13px;
+    -fx-cursor:            hand;
+    -fx-background-radius: 6px;
+    -fx-padding:           4px 12px;
+}
+
+/* ── COMING SOON PLACEHOLDER ───────────────────────── */
+.coming-soon-label {
+    -fx-font-size:   18px;
+    -fx-text-fill:   #9CA3AF;
+    -fx-font-weight: bold;
+}
+
+.coming-soon-sub {
+    -fx-font-size:  13px;
+    -fx-text-fill:  #D1D5DB;
+}
+
+/* ── DOS / DONTS SCREEN ────────────────────────────── */
+.dodont-header {
+    -fx-font-size:   16px;
+    -fx-font-weight: bold;
+    -fx-text-fill:   #1A1A2E;
+    -fx-padding:     0 0 8px 0;
+}
+
+.dodont-header-do {
+    -fx-font-size:   16px;
+    -fx-font-weight: bold;
+    -fx-text-fill:   #065F46;
+}
+
+.dodont-header-dont {
+    -fx-font-size:   16px;
+    -fx-font-weight: bold;
+    -fx-text-fill:   #991B1B;
+}
+
+.dodont-panel {
+    -fx-background-color:  #F9FAFB;
+    -fx-background-radius: 12px;
+    -fx-border-color:      #E5E7EB;
+    -fx-border-radius:     12px;
+    -fx-border-width:      1px;
+    -fx-padding:           16px;
+}
+
+.dodont-do-panel {
+    -fx-background-color:  #F0FDF4;
+    -fx-background-radius: 12px;
+    -fx-border-color:      #BBF7D0;
+    -fx-border-radius:     12px;
+    -fx-border-width:      1px;
+    -fx-padding:           16px;
+}
+
+.dodont-dont-panel {
+    -fx-background-color:  #FFF1F2;
+    -fx-background-radius: 12px;
+    -fx-border-color:      #FECDD3;
+    -fx-border-radius:     12px;
+    -fx-border-width:      1px;
+    -fx-padding:           16px;
+}
+
+.dodont-item-card {
+    -fx-background-color:  white;
+    -fx-background-radius: 8px;
+    -fx-border-color:      #E5E7EB;
+    -fx-border-radius:     8px;
+    -fx-border-width:      1px;
+    -fx-padding:           10px 12px;
+}
+
+.dodont-item-title {
+    -fx-font-size:   13px;
+    -fx-font-weight: bold;
+    -fx-text-fill:   #1A1A2E;
+}
+
+.btn-dodont-success {
+    -fx-background-color:  transparent;
+    -fx-text-fill:         #10B981;
+    -fx-font-size:         12px;
+    -fx-cursor:            hand;
+    -fx-background-radius: 6px;
+    -fx-padding:           3px 10px;
+    -fx-border-color:      #10B981;
+    -fx-border-radius:     6px;
+    -fx-border-width:      1px;
+}
+
+.btn-dodont-success:hover {
+    -fx-background-color:  #10B981;
+    -fx-text-fill:         white;
+}
+
+.btn-dodont-success-active {
+    -fx-background-color:  #10B981;
+    -fx-text-fill:         white;
+    -fx-font-size:         12px;
+    -fx-cursor:            hand;
+    -fx-background-radius: 6px;
+    -fx-padding:           3px 10px;
+}
+
+.btn-dodont-failed {
+    -fx-background-color:  transparent;
+    -fx-text-fill:         #EF4444;
+    -fx-font-size:         12px;
+    -fx-cursor:            hand;
+    -fx-background-radius: 6px;
+    -fx-padding:           3px 10px;
+    -fx-border-color:      #EF4444;
+    -fx-border-radius:     6px;
+    -fx-border-width:      1px;
+}
+
+.btn-dodont-failed:hover {
+    -fx-background-color:  #EF4444;
+    -fx-text-fill:         white;
+}
+
+.btn-dodont-failed-active {
+    -fx-background-color:  #EF4444;
+    -fx-text-fill:         white;
+    -fx-font-size:         12px;
+    -fx-cursor:            hand;
+    -fx-background-radius: 6px;
+    -fx-padding:           3px 10px;
+}
+
+.btn-add-do {
+    -fx-background-color:  #10B981;
+    -fx-text-fill:         white;
+    -fx-font-size:         12px;
+    -fx-font-weight:       bold;
+    -fx-cursor:            hand;
+    -fx-background-radius: 8px;
+    -fx-padding:           6px 14px;
+}
+
+.btn-add-do:hover {
+    -fx-background-color:  #059669;
+}
+
+.btn-add-dont {
+    -fx-background-color:  #EF4444;
+    -fx-text-fill:         white;
+    -fx-font-size:         12px;
+    -fx-font-weight:       bold;
+    -fx-cursor:            hand;
+    -fx-background-radius: 8px;
+    -fx-padding:           6px 14px;
+}
+
+.btn-add-dont:hover {
+    -fx-background-color:  #DC2626;
+}
+
+/* ── ADD TASK MODAL ────────────────────────────────── */
+.modal-title {
+    -fx-font-size:   20px;
+    -fx-font-weight: bold;
+    -fx-text-fill:   #1A1A2E;
+}
+
+.modal-field-label {
+    -fx-font-size:   12px;
+    -fx-font-weight: bold;
+    -fx-text-fill:   #6B7280;
+}
+
+.modal-text-field {
+    -fx-background-radius: 8px;
+    -fx-border-radius:     8px;
+    -fx-border-color:      #E5E7EB;
+    -fx-border-width:      1px;
+    -fx-padding:           8px 12px;
+    -fx-font-size:         14px;
+    -fx-pref-width:        420px;
+}
+
+.modal-text-field:focused {
+    -fx-border-color: -hf-accent;
+}
+
+.modal-text-area {
+    -fx-background-radius: 8px;
+    -fx-border-radius:     8px;
+    -fx-border-color:      #E5E7EB;
+    -fx-border-width:      1px;
+    -fx-padding:           8px 12px;
+    -fx-font-size:         13px;
+    -fx-pref-width:        420px;
+    -fx-pref-height:       80px;
+}
+
+.modal-text-area:focused {
+    -fx-border-color: -hf-accent;
+}
+
+.modal-combo {
+    -fx-background-radius: 8px;
+    -fx-border-radius:     8px;
+    -fx-border-color:      #E5E7EB;
+    -fx-border-width:      1px;
+    -fx-pref-width:        200px;
+    -fx-font-size:         13px;
+}
+
+.modal-date-picker {
+    -fx-background-radius: 8px;
+    -fx-border-radius:     8px;
+    -fx-border-color:      #E5E7EB;
+    -fx-border-width:      1px;
+    -fx-pref-width:        200px;
+    -fx-font-size:         13px;
+}
+
+/* Priority radio buttons */
+.priority-radio-low {
+    -fx-text-fill:   #10B981;
+    -fx-font-size:   13px;
+    -fx-font-weight: bold;
+}
+
+.priority-radio-normal {
+    -fx-text-fill:   #6C63FF;
+    -fx-font-size:   13px;
+    -fx-font-weight: bold;
+}
+
+.priority-radio-high {
+    -fx-text-fill:   #F59E0B;
+    -fx-font-size:   13px;
+    -fx-font-weight: bold;
+}
+
+.priority-radio-critical {
+    -fx-text-fill:   #EF4444;
+    -fx-font-size:   13px;
+    -fx-font-weight: bold;
+}
+
+/* Modal buttons */
+.btn-modal-cancel {
+    -fx-background-color:  transparent;
+    -fx-text-fill:         #6B7280;
+    -fx-font-size:         13px;
+    -fx-cursor:            hand;
+    -fx-background-radius: 8px;
+    -fx-padding:           8px 20px;
+    -fx-border-color:      #E5E7EB;
+    -fx-border-radius:     8px;
+    -fx-border-width:      1px;
+}
+
+.btn-modal-cancel:hover {
+    -fx-background-color: #F3F4F6;
+}
+
+.btn-modal-add {
+    -fx-background-color:  -hf-accent;
+    -fx-text-fill:         white;
+    -fx-font-size:         13px;
+    -fx-font-weight:       bold;
+    -fx-cursor:            hand;
+    -fx-background-radius: 8px;
+    -fx-padding:           8px 24px;
+}
+
+.btn-modal-add:hover {
+    -fx-background-color: -hf-accent-hover;
+}
+
+.modal-section-divider {
+    -fx-background-color: #F3F4F6;
+    -fx-pref-height:      1px;
+    -fx-max-height:       1px;
+}
+
+.modal-dialog-pane {
+    -fx-background-color: white;
+    -fx-background-radius: 16px;
+    -fx-padding:           0;
+}
+
+.modal-error-label {
+    -fx-text-fill:  #EF4444;
+    -fx-font-size:  12px;
+}

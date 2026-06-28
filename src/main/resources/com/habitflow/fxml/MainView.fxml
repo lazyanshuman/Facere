@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane
+    xmlns="http://javafx.com/javafx"
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.habitflow.controller.MainController"
+    styleClass="main-border-pane"
+    prefWidth="1100"
+    prefHeight="700">
+
+    <!-- TOP BAR -->
+    <top>
+        <HBox styleClass="top-bar"
+              spacing="12"
+              alignment="CENTER_LEFT">
+
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <FontIcon iconLiteral="mdi2c-check-decagram"
+                          iconSize="22"
+                          iconColor="#6C63FF"/>
+                <Label text="Facere"
+                       styleClass="app-title-label"/>
+            </HBox>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <TextField fx:id="searchField"
+                       promptText="Search tasks..."
+                       styleClass="search-field"/>
+
+            <TextField fx:id="quickAddField"
+                       promptText="Add a task and press Enter..."
+                       styleClass="quick-add-field"/>
+
+            <Button fx:id="addButton"
+                    styleClass="add-button"
+                    onAction="#onAddButtonClicked">
+                <graphic>
+                    <FontIcon iconLiteral="mdi2p-plus"
+                              iconSize="20"
+                              iconColor="white"/>
+                </graphic>
+            </Button>
+
+            <Button fx:id="profileButton"
+                    text="Me"
+                    styleClass="profile-button"
+                    onAction="#onProfileButtonClicked"/>
+
+        </HBox>
+    </top>
+
+    <!-- LEFT SIDEBAR -->
+    <left>
+        <VBox styleClass="sidebar" spacing="2">
+
+            <!-- MAIN -->
+            <Label text="MAIN"
+                   styleClass="sidebar-section-label"/>
+
+            <Button fx:id="navMyDay"
+                    text="  My Day"
+                    styleClass="nav-button, nav-button-active"
+                    onAction="#onNavClicked">
+                <graphic>
+                    <FontIcon iconLiteral="mdi2w-weather-sunny"
+                              iconSize="16"/>
+                </graphic>
+            </Button>
+
+            <Button fx:id="navImportant"
+                    text="  Important"
+                    styleClass="nav-button"
+                    onAction="#onNavClicked">
+                <graphic>
+                    <FontIcon iconLiteral="mdi2s-star"
+                              iconSize="16"/>
+                </graphic>
+            </Button>
+
+            <Button fx:id="navStats"
+                    text="  Stats"
+                    styleClass="nav-button"
+                    onAction="#onNavClicked">
+                <graphic>
+                    <FontIcon iconLiteral="mdi2c-chart-bar"
+                              iconSize="16"/>
+                </graphic>
+            </Button>
+
+
+            <Region prefHeight="8"/>
+            <Separator/>
+            <Region prefHeight="4"/>
+
+            <!-- HABITS AND LIFESTYLE -->
+            <Label text="HABITS &amp; LIFESTYLE"
+                   styleClass="sidebar-section-label"/>
+
+            <Button fx:id="navHabits"
+                    text="  Habits"
+                    styleClass="nav-button"
+                    onAction="#onNavClicked">
+                <graphic>
+                    <FontIcon iconLiteral="mdi2f-fire"
+                              iconSize="16"/>
+                </graphic>
+            </Button>
+
+            <Button fx:id="navDosDonts"
+                    text="  Dos / Don'ts"
+                    styleClass="nav-button"
+                    onAction="#onNavClicked">
+                <graphic>
+                    <FontIcon iconLiteral="mdi2c-check-circle"
+                              iconSize="16"/>
+                </graphic>
+            </Button>
+
+            <Region prefHeight="8"/>
+            <Separator/>
+            <Region prefHeight="4"/>
+
+            <!-- HISTORY -->
+            <Label text="HISTORY"
+                   styleClass="sidebar-section-label"/>
+
+            <Button fx:id="navCompleted"
+                    text="  Completed"
+                    styleClass="nav-button"
+                    onAction="#onNavClicked">
+                <graphic>
+                    <FontIcon iconLiteral="mdi2c-check-circle-outline"
+                              iconSize="16"/>
+                </graphic>
+            </Button>
+
+            <Button fx:id="navDelayed"
+                    text="  Delayed"
+                    styleClass="nav-button"
+                    onAction="#onNavClicked">
+                <graphic>
+                    <FontIcon iconLiteral="mdi2c-clock-outline"
+                              iconSize="16"/>
+                </graphic>
+            </Button>
+
+            <Button fx:id="navDeleted"
+                    text="  Deleted"
+                    styleClass="nav-button"
+                    onAction="#onNavClicked">
+                <graphic>
+                    <FontIcon iconLiteral="mdi2d-delete-outline"
+                              iconSize="16"/>
+                </graphic>
+            </Button>
+
+            <Region prefHeight="8"/>
+            <Separator/>
+            <Region prefHeight="4"/>
+
+            <!-- REMINDERS -->
+            <Label text="REMINDERS"
+                   styleClass="sidebar-section-label"/>
+
+            <Button fx:id="navNotifyLater"
+                    text="  Notify Later"
+                    styleClass="nav-button"
+                    onAction="#onNavClicked">
+                <graphic>
+                    <FontIcon iconLiteral="mdi2b-bell-outline"
+                              iconSize="16"/>
+                </graphic>
+            </Button>
+
+        </VBox>
+    </left>
+
+    <!-- CENTER PANE -->
+    <center>
+        <VBox styleClass="center-pane" spacing="8">
+
+        <HBox fx:id="headerRow"
+                  alignment="CENTER_LEFT"
+                  spacing="12">
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label fx:id="sectionTitle"
+                           text="My Day"
+                           styleClass="section-title"/>
+                    <Label fx:id="sectionSubtitle"
+                           text="Loading..."
+                           styleClass="section-subtitle"/>
+                </VBox>
+
+                <Button fx:id="clearAllButton"
+                        text="🗑  Clear All"
+                        styleClass="btn-clear-all"
+                        visible="false"
+                        managed="false"
+                        onAction="#onClearAll"/>
+
+                <Button fx:id="addHabitButton"
+                        text="+ Add Habit"
+                        styleClass="btn-add-habit"
+                        visible="false"
+                        managed="false"
+                        onAction="#onAddHabitClicked"/>
+
+            </HBox>
+
+            <Region prefHeight="8"/>
+
+            <ListView fx:id="taskListView"
+                      styleClass="task-list-view"
+                      VBox.vgrow="ALWAYS"/>
+
+        </VBox>
+    </center>
+
+</BorderPane>

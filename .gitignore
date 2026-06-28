@@ -1,0 +1,38 @@
+# Build output
+target/
+
+# IDE
+.vscode/
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Installer output and binaries
+installer/
+*.exe
+*.msi
+
+# Database (user data — NEVER commit)
+*.db
+*.db-shm
+*.db-wal
+
+# Logs
+logs/
+*.log
+
+# Secrets / environment
+.env
+*.key
+*.pem
+
+# Package files
+*.jar
+!src/**/*.jar
