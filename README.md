@@ -117,84 +117,46 @@ A premium desktop productivity application built with JavaFX for Windows. Track 
 
 ## Architecture
 
+```
 src/main/java/com/habitflow/
-
-├── app/                    # Application entry point
-
-│   ├── HabitFlowApp.java   # Main JavaFX Application
-
-│   └── Launcher.java       # Bootstrap launcher
-
-├── controller/             # UI controllers
-
-│   ├── MainController.java # Main view + task cards
-
+├── app/
+│   ├── HabitFlowApp.java
+│   └── Launcher.java
+├── controller/
+│   ├── MainController.java
 │   ├── HabitsController.java
-
 │   ├── DoDontsController.java
-
 │   ├── StatsController.java
-
 │   ├── SplashController.java
-
 │   ├── LockScreenController.java
-
 │   ├── UserPickerController.java
-
 │   ├── ProfileSetupController.java
-
 │   ├── ProfileMenuController.java
-
 │   ├── AddTaskModal.java
-
 │   ├── SecuritySetupController.java
-
 │   └── DueTasksModalController.java
-
-├── dao/                    # Data access layer
-
+├── dao/
 │   ├── DatabaseManager.java
-
 │   ├── SchemaExecutor.java
-
 │   ├── AppDatabase.java
-
 │   ├── TaskDAO.java
-
 │   ├── HabitDAO.java
-
 │   ├── DoDontDAO.java
-
 │   ├── UserDAO.java
-
 │   └── UserMigration.java
-
-├── model/                  # Data models
-
+├── model/
 │   ├── Task.java
-
 │   ├── Habit.java
-
 │   ├── DoDont.java
-
 │   └── User.java
-
-├── service/                # Business logic
-
+├── service/
 │   ├── ThemeManager.java
-
 │   ├── SecurityManager.java
-
 │   └── UserSession.java
-
-└── util/                   # Utilities
-
-├── AnimationHelper.java
-
-└── AppIcon.java
-
-
----
+└── util/
+    ├── AnimationHelper.java
+    └── AppIcon.java
+```
 
 ## Getting Started
 
